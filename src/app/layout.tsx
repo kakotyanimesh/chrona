@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { arrayRegular } from "@/lib/fonts";
+import { arrayRegular, monofur } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -64,8 +64,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${arrayRegular.variable} antialiased font-array`}>
+    <html lang="en" className={`${arrayRegular.variable} ${monofur.variable}`}>
+      <body>
         {children}
       </body>
     </html>
