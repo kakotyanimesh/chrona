@@ -2,6 +2,14 @@
 
 A clean, minimalist study timer application built with Next.js 14 and TypeScript. Track your study sessions with precision and style.
 
+> 🎵 **Vibe-coded application** - Built with passion and good vibes! ✨
+
+![Chrona Preview](./public/og-image.png)
+
+## 🎯 Live Demo
+
+**[Try Chrona Live →](https://chrona.vercel.app)**
+
 ## ✨ Features
 
 -   **⏱️ Precise Timer**: Start, pause, and restart your study sessions
@@ -248,4 +256,10 @@ If you encounter any issues or have questions, please open an issue on GitHub.
 
 ---
 
-**Built with ❤️ using Next.js, TypeScript, and Tailwind CSS**
+## 📸 Preview
+
+![Chrona Study Timer](./public/og-image.png)
+
+**Built with ❤️ and good vibes by [@animesh](https://x.com/_animeshkakoty) using Next.js, TypeScript, and Tailwind CSS**
+
+_This is a vibe-coded application - crafted with passion, creativity, and positive energy! 🎵✨_

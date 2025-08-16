@@ -46,7 +46,7 @@ export default function TimerDisplay({ seconds }: TimerDisplayProps) {
                 <div className='bg-primary absolute w-2 rotate-45 h-10' />
 
                 <h1 className="text-secondary font-array text-3xl font-normal z-10">
-                    Clock
+                    Session
                 </h1>
             </div>
             <div className="text-secondary font-array text-left md:space-y-0 bg-primary px-2 py-1 -space-y-1 md:text-md text-xs absolute md:right-10 right-2">

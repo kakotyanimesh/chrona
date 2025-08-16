@@ -13,6 +13,8 @@ import {
     DailyLog,
     // PauseSession
 } from '@/utils/localStorageHelpers';
+import Link from 'next/link';
+import { LoveIcon } from './ui/love';
 
 export default function TimerWrapper() {
     const [seconds, setSeconds] = useState(0);
@@ -196,6 +198,11 @@ export default function TimerWrapper() {
                 onRestart={handleRestart}
             />
             <LogsList logs={dailyLogs} />
+            <div className='text-center text-xs mt-5 flex flex-row justify-center gap-1 items-center'>
+                <h1>made with</h1>
+                <LoveIcon/>
+                <h1>by <Link target='_blank' href={"https://x.com/_animeshkakoty"} className='text-primary'>@animesh</Link></h1>
+            </div>
         </div>
     );
 }
