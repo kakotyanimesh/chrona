@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+    :root {
+        --active-background: var(--color-background);
+        --active-foreground: var(--color-foreground);
+    }
+
+    html {
+        font-family: var(--array-font);
+    }
+}
+
+@theme {
+    --color-background: hsl(0 0% 0%);
+    --color-foreground: hsl(0 0% 100%);
+    --color-primary: hsl(24 99% 49%);
+    --color-primary-foreground: hsl(0 0% 100%);
+    --color-secondary: hsl(0 0% 100%);
+    --color-secondary-foreground: hsl(0 0% 0%);
+    --font-array: var(--array-font);
+    --font-monof : var(--monof-font);
+    --shadow-primary: 0px 0px 0px 3px #f9670d4d;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--array-font), Arial, Helvetica, sans-serif;
+    background: var(--active-background);
+    color: var(--active-foreground);
+}
+
+/* Ensure consistent number spacing for timer */
+.timer-display {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+    letter-spacing: 0.05em;
+}
+
+/* Animated colon for timer */
+@keyframes colonPulse {
+    0%,
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    51%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+}
+
+.colon-animate {
+    animation: colonPulse 1s infinite;
+    display: inline-block;
+    color: var(--color-primary);
+}
