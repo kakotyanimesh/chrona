@@ -8,7 +8,7 @@ A clean, minimalist study timer application built with Next.js 14 and TypeScript
 
 ## 🎯 Live Demo
 
-**[Try Chrona Live →](https://session.kakoty.me/)**
+**[Try Chrona Live →](https://sessions.kakoty.me/)**
 
 ## ✨ Features
 
