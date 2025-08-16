@@ -65,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${arrayRegular.variable} ${monofur.variable}`}>
-      <body>
+      <body suppressHydrationWarning>
         {children}
       </body>
     </html>

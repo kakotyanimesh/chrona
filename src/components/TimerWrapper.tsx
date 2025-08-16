@@ -15,6 +15,7 @@ import {
 } from '@/utils/localStorageHelpers';
 import Link from 'next/link';
 import { LoveIcon } from './ui/love';
+import { FullscreenButton } from './ui/FullscreenButton';
 
 export default function TimerWrapper() {
     const [seconds, setSeconds] = useState(0);
@@ -71,23 +72,20 @@ export default function TimerWrapper() {
         };
     }, [isRunning]);
 
-    // Check for day change and reset
+    // Check for day change and reset - only when crossing midnight
     useEffect(() => {
+        let lastCheckedDate = getTodayDate();
+
         const checkDayChange = () => {
             const today = getTodayDate();
-            const logs = getDailyLogs();
-            const todayLog = logs.find(log => log.date === today);
 
-            if (!todayLog && seconds > 0) {
-                // New day detected, save yesterday's progress and reset
-                const yesterday = new Date();
-                yesterday.setDate(yesterday.getDate() - 1);
-                const yesterdayDate = yesterday.toISOString().split('T')[0];
-
+            // Only reset if we've actually crossed midnight (date changed from yesterday to today)
+            if (lastCheckedDate !== today && seconds > 0) {
+                // Save yesterday's progress
                 const updatedLogs = [
-                    ...logs.filter(log => log.date !== yesterdayDate),
+                    ...getDailyLogs().filter(log => log.date !== lastCheckedDate),
                     {
-                        date: yesterdayDate,
+                        date: lastCheckedDate,
                         totalSeconds: seconds,
                         pauseSessions: []
                     }
@@ -99,6 +97,8 @@ export default function TimerWrapper() {
                 setSessionStartSeconds(0);
                 setIsRunning(false);
                 saveCurrentSession({ seconds: 0, isRunning: false, lastStartTime: null });
+
+                lastCheckedDate = today; // Update the last checked date
             }
         };
 
@@ -189,20 +189,35 @@ export default function TimerWrapper() {
     };
 
     return (
-        <div className="min-h-screen  flex flex-col pt-10 w-full mb-4">
-            <TimerDisplay seconds={seconds} />
-            <TimerControls
-                isRunning={isRunning}
-                onStart={handleStart}
-                onStop={handleStop}
-                onRestart={handleRestart}
-            />
-            <LogsList logs={dailyLogs} />
-            <div className='text-center text-xs mt-5 flex flex-row justify-center gap-1 items-center'>
-                <h1>made with</h1>
-                <LoveIcon/>
-                <h1>by <Link target='_blank' href={"https://x.com/_animeshkakoty"} className='text-primary'>@animesh</Link></h1>
+        <div className="min-h-screen bg-black flex flex-col items-center justify-center p-8 relative">
+            <div className="flex-1 flex flex-col items-center justify-center w-full">
+                <TimerDisplay seconds={seconds} />
+                <TimerControls
+                    isRunning={isRunning}
+                    onStart={handleStart}
+                    onStop={handleStop}
+                    onRestart={handleRestart}
+                />
+                <LogsList logs={dailyLogs} />
             </div>
+
+            {/* Footer */}
+            <footer className="mt-8 text-center">
+                <p className="text-secondary font-array text-sm opacity-70">
+                    Made with ❤️ by{' '}
+                    <Link
+                        href="https://x.com/_animeshkakoty"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary underline-none hover:text-[#E55A0B] transition-colors duration-200"
+                    >
+                        @animesh
+                    </Link>
+                </p>
+            </footer>
+
+            {/* Fullscreen Button */}
+            <FullscreenButton />
         </div>
     );
 }

@@ -41,7 +41,7 @@ export default function TimerDisplay({ seconds }: TimerDisplayProps) {
     const shouldAnimateColon = prevSeconds !== seconds;
 
     return (
-        <div className="text-center relative space-y-2">
+        <div className="text-center relative space-y-2 w-full">
             <div className='relative flex justify-center flex-row'>
                 <div className='bg-primary absolute w-2 rotate-45 h-10' />
 
@@ -49,7 +49,7 @@ export default function TimerDisplay({ seconds }: TimerDisplayProps) {
                     Session
                 </h1>
             </div>
-            <div className="text-secondary  text-left md:space-y-0 bg-primary/90 px-2 py-1 -space-y-1 md:text-md text-xs absolute md:right-10 right-2">
+            <div className="text-secondary  text-left md:space-y-0 bg-primary/90 px-2 py-1 -space-y-1 md:text-md text-xs absolute md:right-0 right-2">
                 <div>{currentTime}</div>
                 <div>{currentDay}</div>
             </div>
