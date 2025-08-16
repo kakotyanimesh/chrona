@@ -49,11 +49,11 @@ export default function TimerDisplay({ seconds }: TimerDisplayProps) {
                     Chrona
                 </h1>
             </div>
-            <div className="text-secondary font-array text-left md:space-y-auto -space-y-2 md:text-md text-xs absolute md:right-10 right-2">
+            <div className="text-secondary font-array text-left md:space-y-0 bg-primary px-2 py-1 -space-y-1 md:text-md text-xs absolute md:right-10 right-2">
                 <div>{currentTime}</div>
                 <div>{currentDay}</div>
             </div>
-            <div className="md:text-[170px]  text-[70px] flex justify-center items-center font-monof w-full md:mt-0 mt-5">
+            <div className="md:text-[170px]  text-[70px] flex justify-center items-center font-monof w-full md:mt-0 mt-10">
                 <div className="flex items-center justify-center w-[500px]">
                     {/* Hours - Primary Color */}
                     <span className="text-pink-600">
