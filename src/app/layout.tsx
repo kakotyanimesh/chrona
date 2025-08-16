@@ -3,7 +3,7 @@ import { arrayRegular, monofur } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Chrona - Minimalist Study Timer",
+  title: "Sessions - Minimalist Study Timer",
   description: "A clean, minimalist study timer application. Track your study sessions with precision, animated UI, and automatic session logging. Built with Next.js and TypeScript.",
   keywords: ["study timer", "pomodoro", "productivity", "focus", "study sessions", "timer app", "minimalist"],
   authors: [{ name: "Animesh Kakoty", url: "https://x.com/_animeshkakoty" }],
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://chrona.vercel.app",
+    url: "https://sessions.kakoty.me",
     siteName: "Chrona",
     title: "Chrona - Minimalist Study Timer",
     description: "A clean, minimalist study timer application. Track your study sessions with precision, animated UI, and automatic session logging.",
