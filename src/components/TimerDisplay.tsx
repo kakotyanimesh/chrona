@@ -42,6 +42,9 @@ export default function TimerDisplay({ seconds }: TimerDisplayProps) {
 
     return (
         <div className="text-center relative space-y-2 w-full">
+            <div className="sr-only" aria-live="polite">
+                Session time {timeParts.hours}:{timeParts.minutes}:{timeParts.seconds}
+            </div>
             <div className='relative flex justify-center flex-row'>
                 <div className='bg-primary absolute w-2 rotate-45 h-10' />
 

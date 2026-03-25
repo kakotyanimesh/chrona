@@ -9,6 +9,13 @@ export interface DailyLog {
     pauseSessions: PauseSession[];
 }
 
+export interface AlarmSettings {
+    enabled: boolean;
+    intervalMinutes: number; // minutes between alarms
+    audioDataUrl?: string; // base64 data URL for the uploaded audio
+    audioName?: string; // original file name for display
+}
+
 export function getFromLocalStorage<T>(key: string, defaultValue: T): T {
     if (typeof window === "undefined") return defaultValue;
 
@@ -56,4 +63,17 @@ export function saveCurrentSession(session: {
     lastStartTime: number | null;
 }): void {
     setToLocalStorage("currentSession", session);
+}
+
+export function getAlarmSettings(): AlarmSettings {
+    return getFromLocalStorage<AlarmSettings>("alarmSettings", {
+        enabled: false,
+        intervalMinutes: 25,
+        audioDataUrl: undefined,
+        audioName: undefined,
+    });
+}
+
+export function saveAlarmSettings(settings: AlarmSettings): void {
+    setToLocalStorage("alarmSettings", settings);
 }

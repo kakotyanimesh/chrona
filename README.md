@@ -1,6 +1,6 @@
 # Chrona - Minimalist Study Timer
 
-A clean, minimalist study timer application built with Next.js 14 and TypeScript. Track your study sessions with precision and style.
+A clean, minimalist study timer application built with Next.js 15 (App Router) and TypeScript. Track your study sessions with precision and style.
 
 > 🎵 **Vibe-coded application** - Built with passion and good vibes! ✨
 
@@ -18,7 +18,7 @@ A clean, minimalist study timer application built with Next.js 14 and TypeScript
 -   **🌙 Midnight Reset**: Automatically creates new daily logs at midnight
 -   **🎨 Animated UI**: Smooth colon animations when timer is running
 -   **📱 Clean Design**: Minimalist interface with custom Array font
--   **🔥 Modern Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
+-   **🔥 Modern Stack**: Built with Next.js 15, TypeScript, and Tailwind CSS
 
 ## 🎯 Design
 
@@ -142,7 +142,7 @@ chrona/
 
 ### Architecture
 
--   **Next.js 14 App Router**: Modern React framework with server/client components
+-   **Next.js 15 App Router**: Modern React framework with server/client components
 -   **TypeScript**: Full type safety throughout the application
 -   **Tailwind CSS**: Utility-first CSS framework with custom design system
 -   **Client-Side Storage**: localStorage for persistence without backend

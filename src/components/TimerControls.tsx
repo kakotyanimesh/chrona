@@ -12,10 +12,10 @@ export default function TimerControls({ isRunning, onStart, onStop, onRestart }:
         <div className="flex gap-6 justify-center">
             {isRunning ? (
                 <>
-                    <Button onClick={onStop} variant="primary" size="lg">
+                    <Button onClick={onStop} variant="primary" size="default">
                         pause session
                     </Button>
-                    <Button onClick={onRestart} variant="secondary" size="lg">
+                    <Button onClick={onRestart} variant="secondary" size="default">
                         restart session
                     </Button>
                 </>
